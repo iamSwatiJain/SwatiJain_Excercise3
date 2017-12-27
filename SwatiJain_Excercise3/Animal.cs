@@ -1,129 +1,127 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SwatiJain_Excercise3
 {
-    class Animal
+    public class Animal
     {
-        public String name;
-        public int age;
-        public double weight;
+        public String Name { get; set; }
+        public int Age { get; set; }
+        public double Weight;
 
         internal Animal() {}
 
         internal Animal(String name,int age,double weight) {
-            this.name = name;
-            this.age = age;
-            this.weight = weight;
+            Name = name;
+            Age = age;
+            Weight = weight;
         }
 
-        public virtual String Stats() => name + " is " + age + " years old and has weight " + weight+" kg";
+        public virtual String Stats() => Name + " is " + Age + " years old and has weight " + Weight+" kg";
 
     }
 
-    class Dog : Animal
+    public class Dog : Animal
     {
-        int noOfLimbs;
+        public int NoOfLimbs { get; set; }
 
         internal Dog() { }
         
         internal Dog(String name, int age, double weight, int noOfLimbs)
         {
-            base.name = name;
-            base.age = age;
-            base.weight = weight;
-            this.noOfLimbs = noOfLimbs;
+            Name = name;
+            Age = age;
+            Weight = weight;
+            NoOfLimbs = noOfLimbs;
         }
 
         public override String Stats()
         {
-            return base.Stats() + " and has " + noOfLimbs +" limbs.";
+            return base.Stats() + " and has " + NoOfLimbs +" limbs.";
         }
+
+        public string GetString() => "valfri sträng"; 
     }
 
-    class Bird : Animal
+    public class Bird : Animal
     {
-        public double wingSpan;
+        public double WingSpan { get; set; }
 
         internal Bird() {}
 
         internal Bird(String name, int age, double weight, double wingSpan)
         {
-            base.name = name;
-            base.age = age;
-            base.weight = weight;
-            this.wingSpan = wingSpan;
+            Name = name;
+            Age = age;
+            Weight = weight;
+            WingSpan = wingSpan;
         }
 
         public override String Stats()
         {
-            return base.Stats() + " and has a wing span of " + wingSpan+" cm";
+            return base.Stats() + " and has a wing span of " + WingSpan+" cm";
         }
     }
 
-    class Pelican : Bird
+    public class Pelican : Bird
     {
-        bool hasThroatPouch;
+        public bool HasThroatPouch { get; set; }
 
         internal Pelican() { }
 
         internal Pelican(String name, int age, double weight, double wingspan, bool hasThroatPouch)
         {
-            base.name = name;
-            base.age = age;
-            base.weight = weight;
-            base.wingSpan = wingspan;
-            this.hasThroatPouch = hasThroatPouch;
+            Name = name;
+            Age = age;
+            Weight = weight;
+            WingSpan = wingspan;
+            HasThroatPouch = hasThroatPouch;
         }
 
         public override String Stats()
         {
-            return base.Stats()+". Has Throat Pouch : " + hasThroatPouch;
+            return base.Stats()+". Has Throat Pouch : " + HasThroatPouch;
         }
     }
 
-    class Flamingo : Bird
+    public class Flamingo : Bird
     {
-        bool isPink;
+        public bool IsPink { get; set; }
 
         internal Flamingo() { }
 
         internal Flamingo(String name, int age, double weight, double wingspan, bool isPink)
         {
-            base.name = name;
-            base.age = age;
-            base.weight = weight;
-            base.wingSpan = wingspan;
-            this.isPink = isPink;
+            Name = name;
+            Age = age;
+            Weight = weight;
+            WingSpan = wingspan;
+            IsPink = isPink;
         }
         
         public override String Stats()
         {
-            return base.Stats()+". Is Pink: "+ isPink;
+            return base.Stats()+". Is Pink: "+ IsPink;
         }
     }
 
-    class Swan : Bird
+    public class Swan : Bird
     {
-       bool isHerbivorous;
+       public bool IsHerbivorous { get; set; }
 
         internal Swan() { }
 
         internal Swan(String name, int age, double weight, double wingspan, bool isHerbivorous)
         {
-            base.name = name;
-            base.age = age;
-            base.weight = weight;
-            base.wingSpan = wingspan;
-            this.isHerbivorous = isHerbivorous;
+            Name = name;
+            Age = age;
+            Weight = weight;
+            WingSpan = wingspan;
+            IsHerbivorous = isHerbivorous;
         }
 
         public override String Stats()
         {
-            return base.Stats() +". Is Herbivorous: "+ isHerbivorous;
+            return base.Stats() +". Is Herbivorous: "+ IsHerbivorous;
         }
     }
     //Q: Om vi under utvecklingen kommer fram till att samtliga fåglar behöver ett nytt attribut, i vilken klass bör vi lägga det?

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SwatiJain_Excercise3
+﻿namespace SwatiJain_Excercise3
 {
     class PersonHandler
     {
@@ -12,6 +6,7 @@ namespace SwatiJain_Excercise3
         {
             pers.Age = age;
         }
+
         public Person CreatePerson(int age, string fname, string lname, double height, double weight)
         {
             Person p = new Person
@@ -23,6 +18,16 @@ namespace SwatiJain_Excercise3
                 Weight = weight
             };
             return p;
+        }
+
+        public void SetWeight(Person pers, double weight)
+        {
+            pers.Weight = weight;
+        }
+
+        public void SetHeight(Person pers, double height)
+        {
+            pers.Height = height;
         }
     }
 }
