@@ -12,14 +12,9 @@ namespace SwatiJain_Excercise3
 
         public int Age
         {
-            get
-            {
-                return age;
-            }
-            set
-            {
-                age = value;
-            }
+            // shortcut to getter-setter properties
+            get => age;
+            set => age = value;
         }
 
         public String FName
